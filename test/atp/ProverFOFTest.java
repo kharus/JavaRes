@@ -125,6 +125,6 @@ public class ProverFOFTest {
                 "SYN/SYN060+1.p",
                 "SYN/SYN954+1.p"};
         for (String f : probs)
-            runTest(System.getenv("TPTP") + sep + "Problems" + sep + f);
+            runTest(System.getenv("TPTP_HOME") + sep + "Problems" + sep + f);
     }
 }

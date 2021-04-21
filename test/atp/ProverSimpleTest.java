@@ -92,6 +92,6 @@ public class ProverSimpleTest {
                 // "SYN/SYN060+1.p",   // fof
                 // "SYN/SYN954+1.p"};  // fof
         for (String f : probs)
-            runTest(System.getenv("TPTP") + sep + "Problems" + sep + f);
+            runTest(System.getenv("TPTP_HOME") + sep + "Problems" + sep + f);
     }
 }

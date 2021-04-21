@@ -21,6 +21,8 @@ This is a Java rewrite of PyRes - https://github.com/eprover/PyRes
 package atp;
 
 import org.junit.*;
+
+import java.nio.file.Paths;
 import java.util.*;
 import static org.junit.Assert.*;
 
@@ -100,7 +102,9 @@ public class ProofStateTest {
         evalSatResult(spec1, true);
         String tptpDir = System.getenv("TPTP");
         System.out.println("-------");
-        evalSatResult(ClauseSet.parseFromFile(tptpDir + "/Problems/PUZ/PUZ001-1.p"), true);
+        String tptpHome = System.getenv("TPTP_HOME");
+        String clausePath = Paths.get(tptpHome, "Problems", "PUZ", "PUZ001-1.p").toString();
+        evalSatResult(ClauseSet.parseFromFile(clausePath), true);
         System.out.println("-------");
         evalSatResult(spec3, false);
         System.out.println();
